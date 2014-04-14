@@ -1,0 +1,116 @@
+Gnome-Cupertino
+Autor: Rafa Cobreros rafacobreros@gmail.com
+Licencia: GPL
+Original theme en: http://gnome-look.org/content/show.php/Gnome+Cupertino?content=147061
+
+Personalización del tema:
+1.- Seleccionar entorno Unity o Gnome-Shell
+2.- Estilo de nautilus
+3.- Estilo de los botones de la barra de titulos (titlebar)
+4.- Estilo de tabs
+
+NOTA:
+	- Algunos cambios requieren cerrar y abrir sesión despues de hacerlos
+
+Fuente recomendada
+http://www.fontpalace.com/font-details/Lucida+Sans/
+
+------------------------------------------------
+* 1.- Seleccionar entorno Unity o Gnome-Shell *
+------------------------------------------------
+Editar (gedit) el archivo ../Gnome-Cupertino/gtk-3.0/gtk.css, ve a las ultimas lineas del archivo
+
+Encontrarás las dos opciones
+
+	a.- Si usas Gnome-shell y/o Cinnamon
+	@import url("gnome-apps.css");
+
+	b.- Si usas Unity (GlobalMenu)
+	@import url("unity-apps.css");
+
+	(edita la linea 'import' de acuerdo a tu entorno)
+
+----------------------------------------
+* 2.- Seleccionar estilo para nautilus *
+----------------------------------------
+Si utilizas nautilus 3.6.x no necesitas hacer nada en esta seccion !!
+
+Editar (gedit) el archivo ../Gnome-Cupertino/gtk-3.0/gtk.css
+Ve a la ultima linea y encontraras 7 opciones para nautilus:
+
+	Nautilus 3.6.x para gnome-shell 3.6.x y/o unity (opcion por defecto)
+	@import url("nautilus36.css");
+
+Si utilizas Nautilus 3.4.x en gnome-3.6.x como ocurre en Ubuntu 12.10
+dependiendo de si utilzas gnome-shell o unity:
+
+	(3 opciones para gnome-shell)
+	1.- "gnome-nautilus34-gray.css"  		(nautilus sidebar y pathbar gris oscuro)
+	2.- "gnome-nautilus34-light.css" 		(nautilus sidebar azulado y pathbar claro))
+	3.- "gnome-nautilus34-gray-light.css" 	(nautilus sidebar gris oscuro y pathbar claro)
+
+	(3 opciones para UNITY)
+	1.- "unity-nautilus34-gray.css"  		(nautilus sidebar y pathbar gris oscuro)
+	2.- "unity-nautilus34-light.css" 		(nautilus sidebar azulado y pathbar claro)
+	3.- "unity-nautilus34-gray-light.css" 	(nautilus sidebar gris oscuro y pathbar claro)
+
+modifica la linea "@import" para que se corresponda con el estilo que buscas,
+de forma que quede como una de las siete lineas de abajo.
+(ten cuidado de dejar solo UNA de las siete)
+
+@import url("nautilus36.css"); 
+	o
+@import url("gnome-nautilus34-gray.css");
+	o
+@import url("gnome-nautilus34-light.css"); 
+	o
+@import url("gnome-nautilus34-gray-light.css"); 
+	o
+@import url("unity-nautilus34-gray.css");
+	o
+@import url("unity-nautilus34-light.css"); 
+	o
+@import url("unity-nautilus34-gray-light.css"); 
+
+
+------------------------------------------------------------------------------
+* 3.- Seleccionar estilo de los botones de la barra de titulos de la ventana *
+------------------------------------------------------------------------------
+Si prefieres tener los botones tipo Lion en la barra de titulos:
+Copia el contenido del archivo "metacity-lion-buttons.tar.gz" en la carpeta "../Gnome-Cupertino/metacity-1/"
+
+Si prefieres tener los botones tipo Snow Leopard en la barra de titulos:
+Copia el contenido del archivo "metacity-sl-buttons.tar.gz" en la carpeta "../Gnome-Cupertino/metacity-1/"
+
+También si utilizas unity, el que corresponda de estos:
+"unity-lion-buttons.tar.gz" en la carpeta .. /Gnome-Cupertino/unity/
+o
+"unity-sl-buttons.tar.gz" en la carpeta .. /Gnome-Cupertino/unity/
+
+----------------------------------
+* 4.- Seleccionar estilo de TABS *
+----------------------------------
+Editar (gedit) el archivo ../Gnome-Cupertino/gtk-3.0/gtk.css
+
+Ve a la linea donde pone 
+@import url("tabs.css");
+
+y modificala segun la opcion que desees
+
+1.- tabs gris obscuro 
+@import url("tabs-dark.css");
+
+2.- tabs color azul del tema
+@import url("tabs-themed.css");
+
+3.- tabs grid claro con resalte azul 
+@import url("tabs.css");
+
+4.- tabs gris claro con resalte gris obscuro
+@import url("tabs-mono.css");
+
+5.- Estilo de tabs mas traditional style
+@import url("tabs-classic.css");
+
+(ten cuidado de dejar solo UNA de las cinco anteriores)
+

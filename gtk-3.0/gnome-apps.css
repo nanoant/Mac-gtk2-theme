@@ -1,0 +1,100 @@
+/*****************************
+   gnome-shell apps settings
+******************************/
+
+TerminalWindow .notebook tab:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_dark_color, 0.92)),
+                                     to   (shade(@theme_bg_dark_color, 0.88)));
+
+    border-width: 1px 1px 0px 1px;
+    border-style: solid; 
+	/* border-radius: 4px; */
+	border-top-color: 		shade(@theme_bg_dark_color, 0.92);
+	border-left-color: 		shade(@theme_mdi_border_color, 0.75);
+	border-right-color: 	shade(@theme_mdi_border_color, 0.75);	
+
+	border-image: none;
+
+    box-shadow: inset  1px  0px alpha(#fff, 0.04),
+                inset -1px  0px alpha(#fff, 0.04),
+                inset  0px -1px alpha(#fff, 0.04);
+
+}
+
+GeditWindow .notebook tab:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_dark_color, 0.82)),
+                                     to   (shade(@theme_bg_dark_color, 0.80)));
+
+    border-width: 1px 1px 0px 1px;
+    border-style: solid; 
+	/* border-radius: 4px; */
+	border-top-color: 		shade(@theme_bg_dark_color, 0.82);
+	border-left-color: 		shade(@theme_mdi_border_color, 0.75);
+	border-right-color: 	shade(@theme_mdi_border_color, 0.75);	
+
+	border-image: none;
+
+    box-shadow: inset  1px  0px alpha(#fff, 0.04),
+                inset -1px  0px alpha(#fff, 0.04),
+                inset  0px -1px alpha(#fff, 0.04);
+}
+
+NemoWindow .menubar,
+RemminaMain .menubar,
+YelpWindow .menubar,
+EvWindow .menubar,
+Totem .menubar,
+FrWindow .menubar,
+EogWindow .menubar,
+GeditWindow .menubar,
+TerminalWindow .menubar {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_dark_color, 1.00)),
+                                     to   (shade(@theme_bg_dark_color, 0.92))); 
+    /* linea 3D  (oscura) */
+	box-shadow: inset  0px -1px shade(@theme_bg_dark_color, 0.77);
+
+    /* linea 3D (clara) */
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-radius: 0px;
+    border-bottom-color:  shade(@theme_bg_dark_color, 0.99);
+}
+
+NemoWindow .primary-toolbar.toolbar,
+RemminaMain .toolbar,
+FrWindow .primary-toolbar.toolbar,
+EvWindow .primary-toolbar .toolbar,
+EogWindow .primary-toolbar .toolbar,
+GeditWindow .primary-toolbar.toolbar {	
+	background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_dark_color, 0.92)),
+                                     to   (shade(@theme_bg_dark_color, 0.82)));
+
+    border-bottom-color:  shade(@theme_bg_dark_color, 0.60);
+	border-image: none;
+}
+
+YelpWindow .menubar {
+    box-shadow: none;
+    border-bottom-color:   shade(@theme_bg_dark_color, 0.74);
+}
+
+TerminalWindow .menubar,
+GeditWindow .primary-toolbar.toolbar {
+    /* linea 3D  (oscura) */
+	/* box-shadow: inset  0px -1px shade(@theme_bg_dark_color, 0.33); */
+    box-shadow: none;
+
+    /* linea 3D (clara) */
+    /* border-bottom-color:  shade(@theme_bg_dark_color, 0.56);  */
+    border-bottom-width: 0px;
+
+}
+

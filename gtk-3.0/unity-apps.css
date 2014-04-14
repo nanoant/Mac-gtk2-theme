@@ -1,0 +1,49 @@
+/*************************************
+   unity apps settings (globalmenu) 
+*************************************/
+
+
+
+TerminalWindow .notebook tab:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_dark_color, 1.00)),
+                                     to   (shade(@theme_bg_dark_color, 0.86)));
+
+    border-width: 1px 1px 0px 1px;
+    border-style: solid; 
+	/* border-radius: 4px; */
+	border-top-color: 		shade(@theme_bg_dark_color, 1.00);
+	border-left-color: 		shade(@theme_mdi_border_color, 0.85);
+	border-right-color: 	shade(@theme_mdi_border_color, 0.85);	
+
+	border-image: none;
+
+    box-shadow: inset  1px  0px alpha(#fff, 0.04),
+                inset -1px  0px alpha(#fff, 0.04),
+                inset  0px -1px alpha(#fff, 0.04);
+
+}
+
+GeditWindow .primary-toolbar.toolbar {
+    /* linea 3D  (oscura) */
+	/*box-shadow: inset  0px -1px shade(@theme_bg_dark_color, 0.33);  */
+    box-shadow: none;
+
+    /* linea 3D (clara) */
+    /* border-bottom-color:  shade(@theme_bg_dark_color, 0.61); */
+    border-bottom-width:  0px;
+
+}
+
+RemminaMain .toolbar {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_dark_color, 1.00)),
+                                     to   (shade(@theme_bg_dark_color, 0.84)));
+
+    border-bottom-color:  shade(@theme_bg_dark_color, 0.75);
+	border-image: none;
+}
+
+

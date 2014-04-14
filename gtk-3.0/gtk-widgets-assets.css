@@ -1,0 +1,248 @@
+/*************************
+ * Check and Radio items *
+ *************************/
+
+.check,
+.radio,
+.check:active,
+.radio:active,
+.check:insensitive,
+.radio:insensitive {
+    background-color: transparent;
+    border-style: none;
+}
+
+GtkCheckButton:hover,
+GtkCheckButton:active:hover,
+GtkCheckButton:selected,
+GtkCheckButton:selected:focus {
+    background-color: transparent;
+}
+
+.check {
+    background-image: url("assets/l-checkbox-unchecked-18.png");
+}
+
+.check:active {
+    background-image: url("assets/l-checkbox-checked-18.png");
+}
+
+.check:insensitive {
+    background-image: url("assets/checkbox-unchecked-insensitive-18.png");
+}
+
+.check:active:insensitive {
+	background-image: url("assets/checkbox-checked-insensitive-18.png");
+}
+
+.check:inconsistent {
+    background-image: url("assets/checkbox-mixed-18.png");
+}
+
+.check:inconsistent:insensitive{
+    background-image: url("assets/checkbox-mixed-insensitive-18.png");
+}
+
+.check row, 
+.check row:selected,
+.check row:selected:focused {
+    background-image: url("assets/checkbox-unchecked.png");
+}
+
+.check row:active, 
+.check row:selected:active,
+.check row:selected:focused:active {
+    background-image: url("assets/checkbox-checked.png");
+}
+
+.check row:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focused:insensitive {
+    background-image: url("assets/checkbox-unchecked-insensitive.png");
+}
+
+
+.check row:active:insensitive,
+.check row:selected:active:insensitive,
+.check row:selected:focused:active:insensitive {
+    background-image: url("assets/checkbox-checked-insensitive.png");
+}
+
+.check row:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focused:inconsistent {
+    background-image: url("assets/checkbox-mixed.png");
+}
+
+.check row:inconsistent:insensitive,
+.check row:selected:inconsistent:insensitive,
+.check row:selected:focused:inconsistent:insensitive {
+    background-image: url("assets/checkbox-mixed-insensitive.png");
+}
+
+.radio {
+    background-image: url("assets/l-radio-unselected-18.png");
+}
+
+.radio:active {
+    background-image: url("assets/l-radio-selected-18.png");
+}
+
+.radio:insensitive {
+    background-image: url("assets/radio-unselected-insensitive-18.png");
+}
+
+.radio:active:insensitive {
+    background-image: url("assets/radio-selected-insensitive-18.png");
+}
+
+.radio:inconsistent {
+    background-image: url("assets/radio-mixed-18.png");
+}
+
+.radio:inconsistent:insensitive {
+    background-image: url("assets/radio-mixed-insensitive-18.png");
+}
+
+.radio row,
+.radio row:selected,
+.radio row:selected:focused {
+    background-image: url("assets/radio-unselected.png");
+}
+
+.radio row:active, 
+.radio row:selected:active,
+.radio row:selected:focused:active {
+    background-image: url("assets/radio-selected.png");
+}
+
+.radio row:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focused:insensitive {
+    background-image: url("assets/radio-unselected-insensitive.png");
+}
+
+.radio row:active:insensitive,
+.radio row:selected:active:insensitive,
+.radio row:selected:focused:active:insensitive {
+    background-image: url("assets/radio-selected-insensitive.png");
+}
+
+.radio row:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focused:inconsistent {
+    background-image: url("assets/radio-mixed.png");
+}
+
+.radio row:inconsistent:insensitive,
+.radio row:selected:inconsistent:insensitive,
+.radio row:selected:focused:inconsistent:insensitive {
+    background-image: url("assets/radio-mixed-insensitive.png");
+}
+
+
+
+.primary-toolbar GtkComboBox.combobox-entry .button,
+GtkComboBox.combobox-entry .button,
+.primary-toolbar GtkComboBox.combobox-entry .button:nth-child(last),
+GtkComboBox.combobox-entry .button:nth-child(last) {
+
+}
+
+.primary-toolbar GtkComboBox.combobox-entry .button:active,
+.primary-toolbar GtkComboBox.combobox-entry .button:hover:active,
+GtkComboBox.combobox-entry .button:active,
+GtkComboBox.combobox-entry .button:hover:active,
+.primary-toolbar GtkComboBox.combobox-entry .button:active:nth-child(last),
+.primary-toolbar GtkComboBox.combobox-entry .button:hover:active:nth-child(last),
+GtkComboBox.combobox-entry .button:active:nth-child(last),
+GtkComboBox.combobox-entry .button:hover:active:nth-child(last) {
+   
+}
+
+/* for RTL languages */
+.primary-toolbar GtkComboBox.combobox-entry .button:nth-child(first),
+GtkComboBox.combobox-entry .button:nth-child(first) {
+
+}
+
+.primary-toolbar GtkComboBox.combobox-entry .button:active:nth-child(first),
+.primary-toolbar GtkComboBox.combobox-entry .button:hover:active:nth-child(first),
+GtkComboBox.combobox-entry .button:active:nth-child(first),
+GtkComboBox.combobox-entry .button:hover:active:nth-child(first) {
+
+}
+
+GtkScale.trough,
+GtkScale.trough.horizontal {
+
+}
+
+GtkScale.trough.vertical {
+
+}
+
+
+GtkScale.progressbar.horizontal {
+    
+}
+
+GtkScale.progressbar.vertical {
+    
+}
+
+GtkScale.slider,
+GtkScale.slider.horizontal,
+GtkScale.slider.horizontal:hover {
+    background-image: url("assets/scale-slider.svg");
+}
+
+GtkScale.slider:insensitive,
+GtkScale.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-insensitive.svg");
+}
+
+GtkScale.slider.vertical {
+    background-image: url("assets/scale-slider.svg");
+}
+
+GtkScale.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal,
+GtkScale.scale-has-marks-above.slider.horizontal:hover {
+    background-image: url("assets/scale-slider-marks-above-horizontal.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-marks-above-horizontal-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical {
+    background-image: url("assets/scale-slider-marks-above-vertical.svg");
+}
+
+GtkScale.scale-has-marks-above.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-marks-above-vertical-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal,
+GtkScale.scale-has-marks-below.slider.horizontal:hover {
+    background-image: url("assets/scale-slider-marks-below-horizontal.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.horizontal:insensitive {
+    background-image: url("assets/scale-slider-marks-below-horizontal-insensitive.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical {
+    background-image: url("assets/scale-slider-marks-below-vertical.svg");
+}
+
+GtkScale.scale-has-marks-below.slider.vertical:insensitive {
+    background-image: url("assets/scale-slider-marks-below-vertical-insensitive.svg");
+}
+
+
+
