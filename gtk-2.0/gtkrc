@@ -1,3 +1,11 @@
+###############################################################################
+# Mac like GTK 2.0 theme
+#
+# Based on GNOME Cupertino theme
+###############################################################################
+
+gtk-font-name = "Lucida Grande 12"
+
 gtk-color-scheme =
 "base_color:           #fff
 bg_color:              #ededed
@@ -5,8 +13,6 @@ text_color:            #202020
 fg_color:              #363636
 selected_bg_color:     #3875d7
 selected_fg_color:     #fff
-#tooltip_bg_color:     #2e3436
-#tooltip_fg_color:     #fff
 #link_color:           #0033ff
 tooltip_bg_color:      #ffc
 tooltip_fg_color:      #000
@@ -28,7 +34,8 @@ style "default" {
   #######################
   GtkButton::child-displacement-x            = 0
   GtkButton::child-displacement-y            = 0
-  GtkButton::default-border                  = {0, 0, 0, 0}
+  GtkButton::default-border                  = {3, 3, 3, 3}
+  GtkButton::default-outside-border          = {3, 3, 3, 3}
   GtkButton::image-spacing                   = 4
   GtkToolButton::icon-spacing                = 4
 
@@ -84,8 +91,8 @@ style "default" {
   GtkToolbar::window-dragging                = 1
 
   GtkTreeView::expander-size                 = 7
-  GtkTreeView::odd_row_color                 = "#f4f6fa"
-  # GtkTreeView::even_row_color              = "#fff"   # en eclipse afecta backcolor de "Quick Type Hierarchy (CTRL+T)"
+  GtkTreeView::odd_row_color                 = "#f0f3f8"
+  # GtkTreeView::even_row_color              = "#fff" # affects Eclipse "Quick Type Hierarchy (CTRL+T)"
 
   GtkWidget::link-color                      = @link_color
   GtkWidget::focus-padding                   = 0
@@ -123,66 +130,40 @@ style "default" {
 
   engine "murrine" {
     animation           = FALSE
-    arrowstyle          = 1   # Estilo flechas menu (triangulos)
+    arrowstyle          = 1   # triangular submenu indicator
     colorize_scrollbar  = TRUE
     contrast            = 0.6
-    expanderstyle       = 0   # Treview expander (triangulo)
-    cellstyle           = 0
-    focusstyle          = 3
+    expanderstyle       = 0   # triangular treview expander
+    cellstyle           = 0   # remove the border around the selected cell
+    focusstyle          = 2   # use a small colored rectangle
     focus_color         = shade(0.95, mix(0.85, "#83aadc", @bg_color))
-    glazestyle          = 0   # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
+    glazestyle          = 0   # flat highlight
     glow_shade          = 1.0
-    glowstyle           = 0   # 0 = top, 1 = bottom, 2 = top and bottom, 3 = horizontal, 4 = centered glow
-    gradient_shades     = {1.10, 1.10, 0.95, 0.94}
+    glowstyle           = 0   # top
+    gradient_shades     = {1.0, 1.0, 1.0, 1.0}
     highlight_shade     = 1.0
     lightborder_shade   = 1.0
-    lightborderstyle    = 0   # 0 = top side, 1 = all sides
-    listviewstyle       = 0   # 0 = nothing, 1 = dotted, 2 = line
-    listviewheaderstyle = 1   # 0 = flat, 1 = glassy, 2 = raised
-    menubaritemstyle    = 0   # 0 = menuitem look, 1 = button look
-    menubarstyle        = 1   # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
-    menuitemstyle       = 1   # 0 = flat, 1 = glassy, 2 = striped
-    menustyle           = 3   # 0 = no vertical menu stripe, 1 = display vertical menu stripe, 2 = faint? 3 = borderless
+    lightborderstyle    = 0   # lightborder on top side
+    listviewstyle       = 0   # nothing
+    listviewheaderstyle = 1   # glassy
+    menubaritemstyle    = 0   # menuitem look
+    menubarstyle        = 1   # glassy
+    menuitemstyle       = 1   # glassy
+    menustyle           = 3   # borderless
     prelight_shade      = .9  # shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
     progressbarstyle    = 0
-    reliefstyle         = 2   # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
+    reliefstyle         = 2   # shadow
     rgba                = FALSE # alpha transparency
-    roundness           = 3   # 0 = square
-    scrollbarstyle      = 0   # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
-    separatorstyle      = 1   # 0 = Hard seperators 1 = Smooth seperators
+    roundness           = 4   # bit round
+    scrollbarstyle      = 0   # nothing
+    separatorstyle      = 1   # smooth seperators
     shadow_shades       = {0.5, 0.0}
-    sliderstyle         = 0   # 0 = nothing added, 1 = handles
-    stepperstyle        = 1   # 0 = standard, 1 = integrated stepper handles, 2 = unknown
-    textstyle           = 0   # 0 = normal text, 1 = inset
-    toolbarstyle        = 1   # 0 = flat, 1 = glassy, 2 = gradient
+    sliderstyle         = 0   # nothing added
+    stepperstyle        = 1   # integrated stepper handles
+    textstyle           = 0   # normal text
+    toolbarstyle        = 2   # gradient
     trough_shades       = {0.95, 1.05}
   }
-}
-
-style "test" = "default" {
-  fg[NORMAL]        = "#0f0"
-  fg[ACTIVE]        = "#0f0"
-  fg[PRELIGHT]      = "#0f0"
-  fg[SELECTED]      = "#0f0"
-  fg[INSENSITIVE]   = "#0f0"
-
-  bg[NORMAL]        = "#f00"
-  bg[ACTIVE]        = "#f00"
-  bg[PRELIGHT]      = "#f00"
-  bg[SELECTED]      = "#f00"
-  bg[INSENSITIVE]   = "#f00"
-
-  text[NORMAL]      = "#00f"
-  text[ACTIVE]      = "#00f"
-  text[PRELIGHT]    = "#00f"
-  text[SELECTED]    = "#00f"
-  text[INSENSITIVE] = "#00f"
-
-  base[NORMAL]      = "#ff0"
-  base[ACTIVE]      = "#ff0"
-  base[PRELIGHT]    = "#ff0"
-  base[SELECTED]    = "#ff0"
-  base[INSENSITIVE] = "#ff0"
 }
 
 style "wide" {
@@ -196,41 +177,40 @@ style "wider" {
 }
 
 style "button" {
-  xthickness      = 3
-  ythickness      = 3
+  xthickness = 3
+  ythickness = 3
 
-  bg[ACTIVE]      = shade (0.8, "#87c5fb")
+  bg[ACTIVE]      = shade (0.8, @bg_color)
   bg[NORMAL]      = shade (1.0, @bg_color)
   bg[PRELIGHT]    = shade (1.0, @bg_color)
-  bg[SELECTED]    = shade (0.9, "#87c5fb") # Default enter
+  bg[SELECTED]    = shade (0.6, "#87c5fb")
   bg[INSENSITIVE] = shade (0.9, @bg_color)
 
   engine "murrine" {
-    default_button_color = shade (1.05, "#87c5fb")
+    default_button_color = shade (1.0, "#87c5fb")
     border_shades        = {1.0, 0.85}
-    contrast             = 1.2
-    gradient_shades      = {1.15, 1.07, 1.0185, 0.885}
+    contrast             = 1.0
+    gradient_shades      = {1.2, 1.05, 1.0, 1.1}
     focusstyle           = 0
     lightborderstyle     = 0
     lightborder_shade    = 1.2
-    glowstyle            = 2 # 0 = top, 1 = bottom, 2 = top and bottom, 3 = horizontal, 4 = centered glow
+    glowstyle            = 2 # top and bottom
     glow_shade           = 1.2
     textstyle            = 2
     text_shade           = 0.7
-    reliefstyle          = 2
+    reliefstyle          = 2 # shadow
   }
 }
 
 style "combobox" = "button" {
-  # bg[PRELIGHT] = shade (0.98, "#89b6eb") # Pulsating "#80b8ea"
   engine "murrine" {
-    # gradient_shades = {1.23,1.05,1.01,1.04}
-    focusstyle        = 3
+    focusstyle      = 3
+    gradient_shades = {1.2, 1.04, 1.02, 0.9}
   }
 }
 
 style "checkradio_label" {
-  fg[ACTIVE] = @text_color # Forzar color texto en radiobutton-eclipse
+  fg[ACTIVE] = @text_color # force text color on radio button
 }
 
 style "checkbutton" {
@@ -240,7 +220,7 @@ style "checkbutton" {
       recolorable = TRUE
       state = NORMAL
       shadow = OUT
-      overlay_file = "assets/l-checkbox-unchecked-18.png"
+      overlay_file = "assets/checkbox-unchecked-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -248,7 +228,7 @@ style "checkbutton" {
       recolorable = TRUE
       state = PRELIGHT
       shadow = OUT
-      overlay_file = "assets/l-checkbox-unchecked-18.png"
+      overlay_file = "assets/checkbox-unchecked-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -256,7 +236,7 @@ style "checkbutton" {
       recolorable = TRUE
       state = ACTIVE
       shadow = OUT
-      overlay_file = "assets/l-checkbox-unchecked-18.png"
+      overlay_file = "assets/checkbox-unchecked-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -264,7 +244,7 @@ style "checkbutton" {
       recolorable = TRUE
       state = INSENSITIVE
       shadow = OUT
-      overlay_file = "assets/checkbox-unchecked-insensitive-18.png"
+      overlay_file = "assets/checkbox-unchecked-insensitive-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -272,7 +252,7 @@ style "checkbutton" {
       recolorable = TRUE
       state = NORMAL
       shadow = IN
-      overlay_file = "assets/l-checkbox-checked-18.png"
+      overlay_file = "assets/checkbox-checked-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -280,7 +260,7 @@ style "checkbutton" {
       recolorable = TRUE
       state = PRELIGHT
       shadow = IN
-      overlay_file = "assets/l-checkbox-checked-18.png"
+      overlay_file = "assets/checkbox-checked-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -288,7 +268,7 @@ style "checkbutton" {
       recolorable = TRUE
       state = ACTIVE
       shadow = IN
-      overlay_file = "assets/l-checkbox-checked-18.png"
+      overlay_file = "assets/checkbox-checked-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -296,7 +276,7 @@ style "checkbutton" {
       recolorable = TRUE
       state = INSENSITIVE
       shadow = IN
-      overlay_file = "assets/checkbox-checked-insensitive-18.png"
+      overlay_file = "assets/checkbox-checked-insensitive-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -328,10 +308,9 @@ style "entry" { # text
   # fg[SELECTED]    = @text_color
 
   engine "murrine" {
-    contrast        = 0.7
-    roundness       = 2
-    border_shades   = {1.2, 0.90}
-    focus_color     = shade(0.75, mix(0.95, "#83aadc", @bg_color))
+    roundness     = 0 # square
+    border_shades = {1.2, 0.9}
+    focus_color   = shade(0.75, mix(0.95, "#83aadc", @bg_color))
   }
 }
 
@@ -363,26 +342,26 @@ style "menubar" {
   bg[NORMAL]         = @theme_bg_dark_color
 
   engine "murrine" {
-    gradient_shades  = {1.00,0.95,0.96,0.92}
+    gradient_shades  = {1.0, 0.95, 0.96, 0.92}
     border_shades    = {1.0, 1.0}
-    contrast         = 1.00
+    contrast         = 1.0
     lightborderstyle = 0
   }
 }
 
 style "menu" {
-  xthickness                 = 0
-  ythickness                 = 0
+  xthickness = 0
+  ythickness = 0
 
-  bg[NORMAL]                 = shade (1.05, "#ededed")
+  bg[NORMAL] = shade (1.05, "#ededed")
 
   GtkMenuItem::arrow-scaling = 0.5
 
   engine "murrine" {
-    gradient_shades          = {1.0, 1.0, 1.0, 1.0}
-    border_shades            = {1.1, 0.9}
-    roundness                = 0 # 0 = squared
-    contrast                 = 0.8
+    gradient_shades = {1.0, 1.0, 1.0, 1.0}
+    border_shades   = {1.1, 0.9}
+    roundness       = 0 # 0 = squared
+    contrast        = 0.8
   }
 }
 
@@ -395,9 +374,9 @@ style "menu_item_white" {
   bg[SELECTED]      = @menu_gradient
 
   engine "murrine" {
-    gradient_shades = {1.20, 1.10, 1.10, 1.00}
+    gradient_shades = {1.2, 1.1, 1.1, 1.0}
     roundness       = 1
-    border_shades   = {1.60, 1.0}
+    border_shades   = {1.6, 1.0}
     roundness       = 1
     contrast        = 0.9
   }
@@ -412,7 +391,7 @@ style "menu_item_black" {
   bg[SELECTED]      = shade (0.94, "#3c3cf0")
 
   engine "murrine" {
-    gradient_shades = {1.30, 1.15, 1.15, 1.00}
+    gradient_shades = {1.3, 1.15, 1.15, 1.0}
     roundness       = 1
   }
 }
@@ -425,8 +404,7 @@ style "notebook" {
   bg[ACTIVE]          = shade (1.04, @bg_color) # unselected tab
 
   engine "murrine" {
-    gradient_shades   = {1.18,0.96,0.92,0.92}
-    # gradient_shades = {1.25,1.05,1.01,1.04}
+    gradient_shades   = {1.18, 0.96, 0.92, 0.92}
     contrast          = 0.75
     roundness         = 3
     focusstyle        = 2
@@ -438,10 +416,10 @@ style "progressbar" {
   xthickness        = 0
   ythickness        = 0
 
-  bg[SELECTED]      = shade (1.00, @progressbar_color)
+  bg[SELECTED]      = shade (1.0, @progressbar_color)
 
   engine "murrine" {
-    gradient_shades = {1.17, 1.00, 1.01, 1.12}
+    gradient_shades = {1.17, 1.0, 1.01, 1.12}
     roundness       = 3
   }
 }
@@ -453,7 +431,7 @@ style "radiobutton" {
       recolorable     = TRUE
       state           = NORMAL
       shadow          = OUT
-      overlay_file    = "assets/l-radio-unselected-18.png"
+      overlay_file    = "assets/radio-unselected-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -461,7 +439,7 @@ style "radiobutton" {
       recolorable     = TRUE
       state           = PRELIGHT
       shadow          = OUT
-      overlay_file    = "assets/l-radio-unselected-18.png"
+      overlay_file    = "assets/radio-unselected-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -469,7 +447,7 @@ style "radiobutton" {
       recolorable     = TRUE
       state           = ACTIVE
       shadow          = OUT
-      overlay_file    = "assets/l-radio-unselected-18.png"
+      overlay_file    = "assets/radio-unselected-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -477,7 +455,7 @@ style "radiobutton" {
       recolorable     = TRUE
       state           = INSENSITIVE
       shadow          = OUT
-      overlay_file    = "assets/radio-unselected-insensitive-18.png"
+      overlay_file    = "assets/radio-unselected-insensitive-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -485,7 +463,7 @@ style "radiobutton" {
       recolorable     = TRUE
       state           = NORMAL
       shadow          = IN
-      overlay_file    = "assets/l-radio-selected-18.png"
+      overlay_file    = "assets/radio-selected-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -493,7 +471,7 @@ style "radiobutton" {
       recolorable     = TRUE
       state           = PRELIGHT
       shadow          = IN
-      overlay_file    = "assets/l-radio-selected-18.png"
+      overlay_file    = "assets/radio-selected-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -501,7 +479,7 @@ style "radiobutton" {
       recolorable     = TRUE
       state           = ACTIVE
       shadow          = IN
-      overlay_file    = "assets/l-radio-selected-18.png"
+      overlay_file    = "assets/radio-selected-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -509,7 +487,7 @@ style "radiobutton" {
       recolorable     = TRUE
       state           = INSENSITIVE
       shadow          = IN
-      overlay_file    = "assets/radio-selected-insensitive-18.png"
+      overlay_file    = "assets/radio-selected-insensitive-18.svg"
       overlay_stretch = FALSE
     }
     image {
@@ -529,24 +507,23 @@ style "scale" { # slider
   # GtkScale::slider-length     = 15
   GtkScale::trough-side-details = 1
 
-  xthickness                    = 2
-  ythickness                    = 2
+  xthickness   = 2
+  ythickness   = 2
 
-  bg[SELECTED]                  = shade (0.62, @bg_color)
+  bg[SELECTED] = shade (0.62, @bg_color)
 
   engine "murrine" {
-    sliderstyle                 = 0                         # forma del slider
-    contrast                    = 0.8                       # borde de todos los elementos
-    #gradient_shades            = {1.1, 1.0, 1.0, 0.88}     # gradiente del slider
-    gradient_shades             = {0.85, 0.96, 0.94, 0.80}      # gradiente del slider
-    border_shades               = {0.9, 0.8}                # borde del slider
-    roundness                   = 15    # antes 2
-    lightborder_shade           = 1.30                      # brillo del trough-higlight
-    trough_border_shades        = {0.9, 1.12}
-    glow_shade                  = 1.80
-    glowstyle                   = 3 # 0 = top, 1 = bottom, 2 = top and bottom, 3 = horizontal, 4 = centered glow
-    reliefstyle                 = 0
-    # shadow_shades             = { 1.0, 0.9 }
+    sliderstyle          = 0                        # forma del slider
+    contrast             = 0.8                      # borde de todos los elementos
+    gradient_shades      = {0.85, 0.96, 0.94, 0.8}  # gradiente del slider
+    border_shades        = {0.9, 0.8}               # borde del slider
+    roundness            = 15    # antes 2
+    lightborder_shade    = 1.3                      # brillo del trough-higlight
+    trough_border_shades = {0.9, 1.12}
+    glow_shade           = 1.8
+    glowstyle            = 3 # horizontal
+    reliefstyle          = 0 # none
+    # shadow_shades      = { 1, 0.9 }
   }
 }
 
@@ -555,71 +532,50 @@ style "scrollbar" {
   bg[ACTIVE]          = shade (0.96, @base_color)
 
   # color flechas (stepper)
-  fg[NORMAL]          = shade (1.00, @base_color)
-  fg[PRELIGHT]        = shade (1.00, @base_color)
-  fg[ACTIVE]          = shade (1.00, @base_color)
-  fg[SELECTED]        = shade (1.00, @base_color)
-  fg[INSENSITIVE]     = shade (1.00, @base_color)
+  fg[NORMAL]          = shade (1.0, @base_color)
+  fg[PRELIGHT]        = shade (1.0, @base_color)
+  fg[ACTIVE]          = shade (1.0, @base_color)
+  fg[SELECTED]        = shade (1.0, @base_color)
+  fg[INSENSITIVE]     = shade (1.0, @base_color)
 
   engine "murrine" {
     roundness         = 8
-    gradient_shades   = {1.0,1.0,1.0,1.0}
-    highlight_shade   = 1.0
-    glow_shade        = 1.0
+    gradient_shades   = {1.0, 1.0, 1.0, 1.0}
     # reliefstyle     = 0
     prelight_shade    = .75
     gradient_colors   = FALSE
     lightborder_shade = 1.0
     lightborderstyle  = 0
-    trough_shades     = {0.935, 1.00}
-    border_shades     = {0.935, 1.00}
-    contrast          = 0.00
+    trough_shades     = {0.935, 1.0}
+    border_shades     = {0.935, 1.0}
+    contrast          = 0.0
   }
 }
 
 style "overlay_scrollbar"
 {
-  bg[SELECTED]        = shade (1.0, @selected_bg_color)
+  bg[SELECTED]        = shade (1.0,  @selected_bg_color)
   bg[INSENSITIVE]     = shade (0.85, @bg_color)
-  bg[ACTIVE]          = shade (0.6, @bg_color)
+  bg[ACTIVE]          = shade (0.6,  @bg_color)
 }
 
 style "spinbutton"  { # input/stepper
   bg[NORMAL]          = @base_color
-  # Colores flechas-spin
-  # fg[NORMAL]        = "#F00"   # color flechas boton-spin
-  # fg[ACTIVE]        = "#f00"   # color flechas boton-spin pulsada
-  # fg[INSENSITIVE]   = "#F00"   # color flechas boton-spin disabled
-  # fg[PRELIGHT]      = "#F00"   # color flechas boton-spin prelight
 
-  # Colores entry-spin
-  # base[NORMAL]      = "#F00"   # color fondo entry-spin
-  # base[INSENSITIVE] = "#F00"   # color fondo entry-spin disabled
-                                 
-  # Colores boton-spin           
-  # bg[NORMAL]        = "#F00"   # color boton-spin y borde entry-spin
-  # bg[INSENSITIVE]   = "#F00"   # color boton-spin disabled
-  # bg[SELECTED]      = "#F00"   # color focus borde entry-spin
-                                 
-  # text[NORMAL]      = "#F00"   # color texto entry-spin
-  # text[SELECTED]    = "#F00"   # color texto seleccionado entry-spin
-  # text[ACTIVE]      = "#F00"   # color texto seleccionado entry-spin unfocused
-  # text[INSENSITIVE] = "#F00"   # color texto disabled
   engine "murrine" {
-    gradient_shades   = {0.93,1.00,1.00,1.00}
-    contrast          = 0.70
+    gradient_shades   = {0.93, 1.0, 1.0, 1.0}
+    contrast          = 0.7
     lightborderstyle  = 1
     border_shades     = {1.0, 0.7}
-    lightborder_shade = 1.00
+    lightborder_shade = 1.0
   }
 }
 
 style "toolbar" {
   engine "murrine" {
-    contrast          = 0.80
-    lightborder_shade = 1.00
-    gradient_shades   = {0.98,1.00,1.00,1.02}
-    # gradient_shades = {1.00,0.98,0.98,0.96}  # En Unity
+    contrast          = 0.6
+    lightborder_shade = 1.0
+    gradient_shades   = {1.0, 0.9, 0.8, 0.7}
   }
 }
 
@@ -627,93 +583,72 @@ style "toolbar_button" {
   xthickness          = 3
   ythickness          = 3
 
-  bg[NORMAL]          = shade(0.90, @bg_color)
-  bg[PRELIGHT]        = shade(0.91, @bg_color)
-  bg[ACTIVE]          = shade(0.76, @bg_color)
-  bg[SELECTED]        = shade(0.80, @bg_color)
-  bg[INSENSITIVE]     = shade(0.83, @bg_color)
-  fg[ACTIVE]          = @text_color
-
-  fg[INSENSITIVE]     = shade(0.80, @bg_color)
-
   engine "murrine" {
-    gradient_shades   = {1.00,0.96,0.96,0.90}
-    border_shades     = {1.10, 1.00}
-    contrast          = 1.00
+    gradient_shades   = {1.1, 1.0, 1.0, 0.9}
+    border_shades     = {1.1, 1.0}
+    contrast          = 1.2
     lightborderstyle  = 1
     lightborder_shade = 1.1
-    glow_shade        = 1.0
     textstyle         = 1
   }
 }
 
 style "tooltips" {
-  xthickness                   = 8
-  ythickness                   = 4
+  xthickness = 8
+  ythickness = 4
 
-  bg[NORMAL]                   = @tooltip_bg_color
-  fg[NORMAL]                   = @tooltip_fg_color
+  bg[NORMAL] = @tooltip_bg_color
+  fg[NORMAL] = @tooltip_fg_color
 
   GtkWidget::new-tooltip-style = TRUE
 
   engine "murrine" {
-    border_colors              = {shade(0.85, @tooltip_bg_color), shade(0.75, @tooltip_bg_color) }
-    roundness                  = 4
+    roundness = 0
   }
 }
 
 style "treeview" {
-  # base[SELECTED]  = shade (1.00, @selected_bg_color)  # seleccion row focused
-  # base[ACTIVE]    = shade (1.00, @selected_bg_color)  # seleccion row unfocused
-
-  fg[NORMAL]        = shade (1.00, @fg_color)           # header txt color
-  bg[SELECTED]      = shade (1.00, @selected_bg_color)  # backgr mini-checkbox checked
-  text[NORMAL]      = shade (1.05, @fg_color)           # txt+indicador checked normal
-  text[SELECTED]    = @selected_fg_color                # txt+indicador selected focused
-  text[ACTIVE]      = @selected_fg_color                # txt+indicador selected unfocused
-
   engine "murrine" {
-    gradient_shades = {1.00, 1.05, 1.05, 1.10}
     separatorstyle  = 0
   }
 }
 
-style "treeview_header"       = "button" {
-  ythickness                  = 1
-  GtkWidget   ::focus-padding = 0
+style "treeview_header" = "button" {
+  ythickness = 1
+  GtkWidget::focus-padding = 0
 
-  bg[ACTIVE]                  = shade (1.00, "#80b8ea")   # Pulsating
-  bg[NORMAL]                  = shade (0.95, "#fff")
-  bg[PRELIGHT]                = shade (1.05, "#80b8ea")
-  bg[SELECTED]                = shade (0.95, "#80b8ea")   # Default enter
-  bg[INSENSITIVE]             = shade (1.00, "#fff")
+  bg[ACTIVE]      = shade (1.0,  "#80b8ea")
+  bg[NORMAL]      = shade (0.95, "#fff")
+  bg[PRELIGHT]    = shade (1.05, "#80b8ea")
+  bg[SELECTED]    = shade (0.95, "#80b8ea")
+  bg[INSENSITIVE] = shade (1.0,  "#fff")
 
   engine "murrine" {
-    border_shades             = {1.2, 1.05}
-    contrast                  = 1.22
-    gradient_shades           = {1.20,1.02,0.99,1.15}
+    border_shades    = {1.2, 1.05}
+    contrast         = 1.2
+    gradient_shades  = {1.2, 1.02, 0.99, 1.15}
 
-    lightborderstyle          = 1
-    textstyle                 = 1
+    lightborderstyle = 1
+    textstyle        = 1
   }
 }
 
-style "checkradio"               = "button" {
-  xthickness                     = 3
-  ythickness                     = 3
+style "checkradio" = "button" {
+  xthickness       = 3
+  ythickness       = 3
   GtkRadioButton::indicator-size = 16
 
-  base[NORMAL]                   = shade (0.95, @base_color)         # radiocheck normal
-  bg[SELECTED]                   = shade (1.25, "#87c5fb")           # radiocheck color checked
+  base[NORMAL]   = shade (0.95, @base_color)         # radiocheck normal
+  bg[SELECTED]   = shade (1.25, "#87c5fb")           # radiocheck color checked
 
-  text[NORMAL]                   = shade (0.50, @selected_bg_color)  # indicador normal
-  text[PRELIGHT]                 = shade (0.35, @selected_bg_color)  # indicador hover
-  text[ACTIVE]                   = shade (0.15, @selected_bg_color)  # indicador click
+  text[NORMAL]   = shade (0.5, @selected_bg_color)   # indicador normal
+  text[PRELIGHT] = shade (0.35, @selected_bg_color)  # indicador hover
+  text[ACTIVE]   = shade (0.15, @selected_bg_color)  # indicador click
 
-  bg[ACTIVE]                     = shade (0.80, @bg_color)   # button option "#80b8ea"
+  bg[ACTIVE]     = shade (0.8, @bg_color) # button option "#80b8ea"
 
   engine "murrine" {
-    reliefstyle                  = 3
+    reliefstyle  = 3
   }
 }
 
@@ -802,7 +737,7 @@ style "chrome-gtk-frame" {
   ChromeGtkFrame::inactive-frame-color            = shade (0.46, @bg_color)
   ChromeGtkFrame::frame-gradient-color            = shade (0.96, @bg_color)
   ChromeGtkFrame::inactive-frame-gradient-color   = shade (0.96, @bg_color)
-  ChromeGtkFrame::scrollbar-trough-color          = shade (1.00, @bg_color)
+  ChromeGtkFrame::scrollbar-trough-color          = shade (1.0, @bg_color)
   ChromeGtkFrame::scrollbar-slider-prelight-color = shade (0.85, @bg_color)
   ChromeGtkFrame::scrollbar-slider-normal-color   = shade (0.78, @bg_color)
 }
@@ -854,39 +789,3 @@ style "vim-scrollbar"            = "scrollbar" {
   }
 }
 widget "vim-main-window.*Scrollbar*"    style "vim-scrollbar"
-
-# For Eclipse (swt) toolbars.
-widget "*swt*toolbar*"          style "default"
-
-style "xfce-panel" {
-  fg[NORMAL]        = @fg_color
-  fg[PRELIGHT]      = @selected_fg_color
-  fg[ACTIVE]        = @selected_fg_color
-  fg[SELECTED]      = @selected_fg_color
-
-  bg[NORMAL]        = shade (1.00, @theme_bg_dark_color)
-  bg[PRELIGHT]      = shade (0.60, @theme_bg_dark_color)
-  bg[ACTIVE]        = shade (0.80, mix(0.30, @bg_color, @selected_bg_color))
-  bg[SELECTED]      = shade (1.20, @selected_bg_color)
-  engine "murrine" {
-    gradient_shades = {0.75, 0.85, 0.85, 0.95}
-    roundness       = 2
-    contrast        = 0.2
-    glowstyle       = 1 # 0 = top, 1 = bottom, 2 = top and bottom, 3 = horizontal, 4 = centered glow
-    glow_shade      = 1.25
-  }
-  xthickness        = 3
-  ythickness        = 3
-}
-
-widget "*Xfce*Panel*"   style "xfce-panel"
-class "*Xfce*Panel*"    style "xfce-panel"
-
-# XFCE desktop icon text looks weird when murrine textstyle is on.
-style "xfdesktop-icon-view" { engine "murrine" { textstyle = 0 }}
-widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
-
-# widget "xfwm4-tabwin*" style "murrine-dark"
-include "apps/thunar.rc"        # thunar especific
-include "apps/terminal.rc"
-include "apps/gmusicbrowser.rc"
