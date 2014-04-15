@@ -8,6 +8,12 @@ with latest OSX.
 
 This theme is based on [Gnome-Cupertino][Gnome-Cupertino] by *Rafa Cobreros*.
 
+### Changes to original theme
+
+1. Checkbox and radio buttons were remade in SVG (for *Retina* support)
+2. Button & combo box gradients were adjusted to match better *10.9*
+3. Removed GTK 3.0 theme and 3rd party app fixes
+
 ### Screenshot
 
 ![Screenshot](screenshots/inkscape-native-osx.png)
